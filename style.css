@@ -10,21 +10,36 @@ body {
     display       : flex;
     flex-direction: column;
     align-items   : center;
+    text-align: center;
 }
 
-#players {
+#player-container {
     display   : flex;
     gap       : 32px;
     margin-top: 46px;
 }
 
-.human,
-.machine {
+.symbols-container {
+    display        : flex;
+    justify-content: space-evenly;
+    margin-top: 16px;
+}
+
+.player {
     border: 1px solid black;
     width : 500px;
-    height: 500px;
+    height: 200px;
 }
-.images{
-    width: 100px;
+
+.choose{
+    margin-top: 16px;
+}
+
+.images {
+    width : 100px;
     height: 100px;
+}
+
+button:hover {
+    cursor: pointer;
 }
