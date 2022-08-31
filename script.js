@@ -1,7 +1,7 @@
 const getComputerChoice = () => {
     let letter = ["Rock", "Paper", "Scissors"]
     let choosenLetter = letter[Math.floor(Math.random() * letter.length)]
-    console.log(choosenLetter)
+    return choosenLetter
 }
 
 const playRound = (playerSelection, computerSelection) => {
@@ -9,27 +9,30 @@ const playRound = (playerSelection, computerSelection) => {
     let firstLttrPlayer = playerSelection.slice(0, 1).toUpperCase()
     let restOfTheLttrPlayer = playerSelection.slice(1, playerSelection.length).toLowerCase()
     let playerChoice = firstLttrPlayer + restOfTheLttrPlayer
+
     // computer
     let firstLttrComputer = computerSelection.slice(0, 1).toUpperCase()
     let restOfTheLttrComputer = computerSelection.slice(1, computerSelection.length).toLowerCase()
     let computerChoice = firstLttrComputer + restOfTheLttrComputer
 
-    if (playerChoice === computerChoice) {
-        return "You cannot choose the same as the adversary"
+    // logic
+    if (playerChoice === computerChoice && playerChoice === "Rock" && computerChoice === "Rock" || playerChoice === "Paper" && computerChoice === "Paper" || playerChoice === "Scissors" && computerChoice === "Scissors") {
+        return "Draw!"
     }
-    else if (playerChoice == "Rock" && computerChoice == "Scissors") {
-        return "Rock beats Scissors. You win!"
+    else if (playerChoice == "Rock" && computerChoice == "Scissors" || playerChoice == "Paper" && computerChoice == "Rock" || playerChoice == "Scissors" && computerChoice == "Paper") {
+        return "You win! " + playerChoice + " beats " + computerChoice + "."
     }
-    else if (playerChoice == "Paper" && computerChoice == "Rock") {
-        return "Paper beats Rock. You win!"
-    }
-    else if (playerChoice == "Scissors" && computerChoice == "Paper") {
-        return "Scissors beats Paper. You win!"
-    }
-    else if (playerChoice && computerChoice !== "Rock" || playerChoice && computerChoice !== "Paper" || playerChoice && computerChoice !== "Scissors") {
-        return "This isn't an option. Please choose between Rock, Paper or Scissors"
+    else if (computerChoice === "Rock" && playerChoice === "Scissors" || computerChoice === "Paper" && playerChoice === "Rock" || computerChoice === "Scissors" && playerChoice === "Paper") {
+        return "You lose! " + computerChoice + " beats " + playerChoice + "."
     }
     else {
-        return computerChoice + " beats " + playerChoice + "." + " You lose!"
+        return "This isn't an option. Please choose between Rock, Paper or Scissors"
     }
 }
+
+const game = () => {
+    const getPlayerChoice = prompt("Choose between Rock, Paper or Scissors.")
+    alert(playRound(getPlayerChoice, getComputerChoice()))
+}
+
+game()
