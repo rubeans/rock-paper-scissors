@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 * {
     margin          : 0;
     box-sizing      : border-box;
-    font-family     : 'Montserrat', sans-serif;
+    font-family     : 'Permanent Marker', cursive;
     background-color: rgb(218, 218, 218);
 }
 
@@ -53,5 +53,10 @@ h1 {
 }
 
 .btn:hover {
-    cursor: pointer;
+    cursor          : pointer;
+    background-color: rgb(68, 68, 68);
+}
+
+.copy {
+    margin-top: 32px;
 }

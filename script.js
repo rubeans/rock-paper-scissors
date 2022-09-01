@@ -45,3 +45,7 @@
 const rock = document.querySelector(".rock")
 const paper = document.querySelector(".paper")
 const scissors = document.querySelector(".scissors")
+
+let playerPoints = 0
+let computerPoints = 0
+let message = ""
