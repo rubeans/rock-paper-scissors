@@ -44,7 +44,9 @@ h1 {
 .images {
     width  : 100px;
     height : 100px;
-    padding: 16px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 35px;
 }
 
 .btn,
