@@ -4,5 +4,31 @@
     font-family     : 'Permanent Marker', cursive;
     background-color: #252525;
     margin          : 0;
-    color           : #31f300;
+    color           : #fcfcfc;
+}
+
+.game {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    text-align     : center;
+    min-height     : 100vh;
+}
+
+p {
+    margin-top: 32px;
+}
+
+button {
+    border       : 1px solid #fcfcfc;
+    padding      : 10px;
+    border-radius: 7px;
+    margin-top   : 32px;
+}
+
+button:hover {
+    cursor          : pointer;
+    color           : #252525;
+    background-color: #fcfcfc;
 }
