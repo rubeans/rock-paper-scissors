@@ -16,23 +16,35 @@
     min-height     : 100vh;
 }
 
+h1 {
+    margin-top: 64px;
+    font-size : 48px;
+}
+
+span {
+    color    : yellow;
+    font-size: 19px;
+}
+
 p {
     margin-top: 32px;
-    font-size: 20px;
+    font-size : 38px;
+}
+
+.player {
+    color: green;
+}
+
+.computer {
+    color: red;
 }
 
 button {
     border       : 1px solid #fcfcfc;
     padding      : 10px;
     border-radius: 7px;
-}
-
-.refresh{
-    margin-bottom   : 64px;
-}
-
-.startGame{
     margin-top   : 32px;
+    font-size    : 32px;
 }
 
 button:hover {

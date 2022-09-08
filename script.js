@@ -1,13 +1,13 @@
 // WHAT TOP REQUESTED FOR ME TO DO
 
 // GET THE ELEMENTS
-let heading = document.querySelector("h1");
-let paragraph = document.querySelector("p");
+let heading = document.querySelector("h1")
+let paragraph = document.querySelector("p")
+let span = document.querySelector("span")
 
 // INITIAL COUNT
 let playerCount = 0
 let computerCount = 0
-
 // GET COMPUTER CHOICE
 const getComputerChoice = () => {
     let letter = ["Rock", "Paper", "Scissors"]
@@ -62,12 +62,14 @@ const game = () => {
     // SHOW WHO WINS
     if (playerCount > computerCount) {
         heading.innerText = "Congrats! You won the game."
+        heading.classList.add("player")
     }
     else if (playerCount === computerCount) {
         heading.innerText = "What a tough game. It's a tie!"
     }
     else {
         heading.innerText = "Nice try! The computer was smarter this time."
+        heading.classList.add("computer")
     }
 }
 
@@ -79,11 +81,11 @@ const startGame = () => {
 }
 
 // HIDE BUTTON
-const hideStartButton = () => {
-    document.querySelector(".startGame").style.visibility = "hidden"
+const hideButton = () => {
+    document.querySelector("button").setAttribute("hidden", "true")
 }
 
-// TRYING TO FIGURE OUT
-const playAgain = () => {
-    
+// PLAY AGAIN
+const refresh = () => {
+    span.innerText = "Refresh the page to play again."
 }
