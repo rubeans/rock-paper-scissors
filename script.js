@@ -64,12 +64,12 @@ const game = () => {
         heading.innerText = "Congrats! You won the game."
         heading.classList.add("player")
     }
-    else if (playerCount === computerCount) {
-        heading.innerText = "What a tough game. It's a tie!"
-    }
-    else {
+    else if (playerCount < computerCount) {
         heading.innerText = "Nice try! The computer was smarter this time."
         heading.classList.add("computer")
+    }
+    else {
+        heading.innerText = "What a tough game. It's a tie!"
     }
 }
 
