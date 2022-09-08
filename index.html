@@ -11,25 +11,13 @@
 </head>
 
 <body>
-  <h1>Rock, Paper, Scissors</h1>
-  <div id="player-container">
-    <div class="player">
-      <h2 class="choose">Choose One</h2>
-      <div class="symbols-container">
-        <button class="rock btn"><img class="images" src="./images/rock.png" alt="rock"></button>
-        <button class="paper btn"><img class="images" src="./images/paper.png" alt="paper"></button>
-        <button class="scissors btn"><img class="images" src="./images/scissor.png" alt="scissor"></button>
-      </div>
+  <main class="game">
+    <div class="content">
+      <h1>Rock, Paper, Scissors</h1>
+      <p></p>
     </div>
-  </div>
-  <div class="copy">
-    <p>Copyright &copy;
-      <script>
-        document.write(new Date().getFullYear())
-      </script>
-      Rubens Guilherme
-    </p>
-  </div>
+    <button onclick="startGame()">Start The Game</button>
+  </main>
   <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
