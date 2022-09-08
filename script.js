@@ -64,7 +64,7 @@ const game = () => {
         heading.innerText = "Congrats! You won the game."
     }
     else if (playerCount === computerCount) {
-        heading.innerText = "What a tough game. It's a draw!"
+        heading.innerText = "What a tough game. It's a tie!"
     }
     else {
         heading.innerText = "Nice try! The computer was smarter this time."
@@ -79,6 +79,11 @@ const startGame = () => {
 }
 
 // HIDE BUTTON
-const hideButton = () => {
-    document.querySelector("button").style.visibility = "hidden"
+const hideStartButton = () => {
+    document.querySelector(".startGame").style.visibility = "hidden"
+}
+
+// TRYING TO FIGURE OUT
+const playAgain = () => {
+    
 }

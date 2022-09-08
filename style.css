@@ -18,12 +18,20 @@
 
 p {
     margin-top: 32px;
+    font-size: 20px;
 }
 
 button {
     border       : 1px solid #fcfcfc;
     padding      : 10px;
     border-radius: 7px;
+}
+
+.refresh{
+    margin-bottom   : 64px;
+}
+
+.startGame{
     margin-top   : 32px;
 }
 
