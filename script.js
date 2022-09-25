@@ -73,12 +73,6 @@ const game = () => {
     }
 }
 
-// START THE GAME
-const startGame = () => {
-    for (let i = 0; i < 5; i++) {
-        game()
-    }
-}
 
 // HIDE BUTTON
 const hideButton = () => {
