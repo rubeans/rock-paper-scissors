@@ -1,85 +1,56 @@
-// WHAT TOP REQUESTED FOR ME TO DO
+// GET ELEMENT
+const playerText = document.querySelector("#playerText")
+const computerText = document.querySelector("#computerText")
+const resultText = document.querySelector("#resultText")
+const buttons = document.querySelectorAll(".btn")
 
-// GET THE ELEMENTS
-let heading = document.querySelector("h1")
-let paragraph = document.querySelector("p")
-let span = document.querySelector("span")
+// DECLARE THE VARIABLES
+let player;
+let computer;
+let result;
 
-// INITIAL COUNT
-let playerCount = 0
-let computerCount = 0
+// MAIN
+buttons.forEach(button => button.addEventListener("click", () => {
+
+    player = button.classList[0]
+    // console.log(player)
+
+    computerChoice()
+
+    playerText.textContent = player
+
+    computerText.textContent = computer
+
+    resultText.textContent = checkWinner()
+
+}))
+
 // GET COMPUTER CHOICE
-const getComputerChoice = () => {
-    let letter = ["Rock", "Paper", "Scissors"]
-    let choosenLetter = letter[Math.floor(Math.random() * letter.length)]
-    return choosenLetter
+const computerChoice = () => {
+    const randNum = Math.floor(Math.random() * 3) + 1
+
+    switch (randNum) {
+        case 1:
+            computer = "rock"
+            break;
+        case 2:
+            computer = "paper"
+            break;
+        case 3:
+            computer = "scissor"
+            break;
+    }
 }
 
-// ROUNDS
-const playRound = (playerSelection, computerSelection) => {
-    // PLAYER CHOICE
-    let firstLttrPlayer = playerSelection.slice(0, 1).toUpperCase()
-    let restOfTheLttrPlayer = playerSelection.slice(1, playerSelection.length).toLowerCase()
-    let playerChoice = firstLttrPlayer + restOfTheLttrPlayer
-
-    // COMPUTER CHOICE
-    let firstLttrComputer = computerSelection.slice(0, 1).toUpperCase()
-    let restOfTheLttrComputer = computerSelection.slice(1, computerSelection.length).toLowerCase()
-    let computerChoice = firstLttrComputer + restOfTheLttrComputer
-
-    // LOGIC
-    if (playerChoice === computerChoice && playerChoice === "Rock" && computerChoice === "Rock" || playerChoice === "Paper" && computerChoice === "Paper" || playerChoice === "Scissors" && computerChoice === "Scissors") {
-        playerCount += 0
-        computerCount += 0
+// CHECK THE WINNER
+const checkWinner = () => {
+    if (player == computer) {
         return "Draw!"
     }
-    else if (playerChoice == "Rock" && computerChoice == "Scissors" || playerChoice == "Paper" && computerChoice == "Rock" || playerChoice == "Scissors" && computerChoice == "Paper") {
-        playerCount += 1
-        computerCount += 0
-        return "Nice choice, you win the round! " + playerChoice + " beats " + computerChoice + "."
-    }
-    else if (computerChoice === "Rock" && playerChoice === "Scissors" || computerChoice === "Paper" && playerChoice === "Rock" || computerChoice === "Scissors" && playerChoice === "Paper") {
-        playerCount += 0
-        computerCount += 1
-        return "Bad choice, computer wins the round! " + computerChoice + " beats " + playerChoice + "."
+    else if (player == "rock" && computer == "scissor" || player == "paper" && computer == "rock" || player == "scissors" && computer == "raper") {
+        return "You Win!"
     }
     else {
-        return "This isn't an option. Please, choose between Rock, Paper or Scissors."
+        return "You Lose!"
     }
-}
-
-// GAME CONTENT
-const game = () => {
-    //GET PLAYER CHOICE
-    const getPlayerChoice = prompt("Please, choose between Rock, Paper or Scissors.")
-
-    // DISPLAY THE QUESTION
-    alert(playRound(getPlayerChoice, getComputerChoice()))
-
-    // SHOW THE RESULT
-    paragraph.innerText = "Score: " + playerCount + " - " + computerCount
-
-    // SHOW WHO WINS
-    if (playerCount > computerCount) {
-        heading.innerText = "Congrats! You won the game."
-        heading.classList.add("player")
-    }
-    else if (playerCount < computerCount) {
-        heading.innerText = "Nice try! The computer was smarter this time."
-        heading.classList.add("computer")
-    }
-    else {
-        heading.innerText = "What a tough game. It's a tie!"
-    }
-}
-
-
-// HIDE BUTTON
-const hideButton = () => {
-    document.querySelector("button").setAttribute("hidden", "true")
-}
-
-// PLAY AGAIN
-const refresh = () => {
-    span.innerText = "Refresh the page to play again."
 }

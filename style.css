@@ -20,6 +20,10 @@ h1 {
     font-size: 52px;
 }
 
+h2{
+    font-size: 32px;
+}
+
 .options {
     margin-top: 44px;
 }
@@ -43,5 +47,25 @@ img {
 
 button:hover {
     cursor : pointer;
-    padding: 33px 35px 33px 35px;
+    padding: 36px;
+}
+
+.count {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    margin-top     : 64px;
+    padding        : 0 32px 0 32px;
+}
+
+#playerText {
+    color: rgb(97, 113, 255);
+}
+
+#computerText {
+    color: rgb(255, 85, 85);
+}
+
+#resultText {
+    color: rgb(243, 243, 98);
 }
